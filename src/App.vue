@@ -1,8 +1,13 @@
 <template>
+  <div class="buttons">
+    <button :class="{ activeButton: isAdmin }" @click="isAdmin = true">ADMIN</button>
+    <button :class="{ activeButton: !isAdmin }" @click="isAdmin = false">USER</button>
+  </div>
   <div>
-    <h1>Hello World</h1>
-    <button @click="isAdmin = true">ADMIN</button>
-    <button @click="isAdmin = false">USER</button>
+    <h1>MY PORTFOLIO</h1>
+  </div>
+  
+  <div class="grid-component">
     <admin-view v-if="isAdmin" @createProject="addProject" />
     <user-view v-else />
   </div>
@@ -21,15 +26,37 @@ export default {
   data() {
     return {
       isAdmin: true,
-      allProjects: []
+      allProjects: [],
     };
   },
   methods: {
     addProject(project) {
       this.allProjects.push(project);
+      console.log(this.allProjects)
     }
   }
 };
 </script>
 
-<style></style>
+<style>
+body{
+  display: grid;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 75%;
+  margin: auto;
+}
+h1{
+  text-align: center;
+}
+.activeButton {
+  background-color: red;
+}
+.buttons{
+  display: flex;
+  justify-content: end;
+}
+.grid-component{
+  display: grid;
+  justify-items: center;
+}
+</style>
