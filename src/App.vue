@@ -3,13 +3,14 @@
     <button :class="{ activeButton: isAdmin }" @click="isAdmin = true">ADMIN</button>
     <button :class="{ activeButton: !isAdmin }" @click="isAdmin = false">USER</button>
   </div>
+
   <div>
     <h1>MY PORTFOLIO</h1>
   </div>
   
   <div class="grid-component">
-    <admin-view v-if="isAdmin" @createProject="addProject" />
-    <user-view v-else />
+    <admin-view v-if="isAdmin" @createProject="addProject"/>
+    <user-view v-else :allProjects = "allProjects" /> 
   </div>
 </template>
 
@@ -30,9 +31,9 @@ export default {
     };
   },
   methods: {
-    addProject(project) {
-      this.allProjects.push(project);
-      console.log(this.allProjects)
+    addProject(newProject) {
+      this.allProjects.push(newProject);
+      console.log ("pepu", this.allProjects)
     }
   }
 };
