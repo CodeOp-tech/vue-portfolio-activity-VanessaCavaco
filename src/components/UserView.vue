@@ -26,7 +26,7 @@
 
 <div class="flex-row">
   <div v-if = "allProjects.length > 0" class="grid-column">
-    <small-image v-for="(project,index) in allProjects" :key="index" :project="project" @bigImage="addBigProject(bigProject)" class="grid-item"/> 
+    <small-image v-for="(project,index) in allProjects" :key="index" :project="project" @bigImage="addBigProject" class="grid-item"/> 
   </div>
 </div> 
 </template>
@@ -49,8 +49,9 @@ export default {
     }
   },
   methods:{
-    addBigProject(bigProject){
-      this.bigProject = bigProject;
+    addBigProject(project){
+      console.log(project)
+      this.bigProject = project;
     }
   }
 };

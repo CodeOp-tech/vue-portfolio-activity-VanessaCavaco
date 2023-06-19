@@ -44,6 +44,7 @@ body{
   display: grid;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 75%;
+  max-width: 450px;
   margin: auto;
 }
 h1{
