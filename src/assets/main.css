@@ -1,0 +1,17 @@
+/*
+  sm: 640px;
+  md: 768px;
+  lg: 1024px;
+  xl: 1280px;
+  2xl: 1536px;
+*/
+
+:root {
+    --c-primary: #718096;
+    --c-primary-light: #a0aec0;
+    --c-primary-dark: #4a5568;
+    --gap-sm: 8px;
+    --gap-md: 16px;
+    --gap-lg: 32px;
+  }
+  
